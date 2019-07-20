@@ -15,25 +15,16 @@ namespace Mic.Repository
         protected BaseRepository(DbContext dbContext) : base(dbContext) { }
         protected abstract TEntity CreateEntity(IDataReader reader);
 
+
         public IEnumerable<TEntity> SelectAll()
         {
             string query = string.Format(Queries.SelectAll, TableName);
             return OnExecute(query).Select(CreateEntity);
-            //return OnExecute(query).Select(reader => CreateEntity(reader));
-            //IEnumerable<IDataReader> readers = OnExecute(query);
-            //foreach (var reader in readers)
-            //{
-            //    TEntity entity = CreateEntity(reader);
-            //}
         }
         public TEntity FirstOrDefault(int id)
         {
             string query = string.Format(Queries.SelectOne, TableName, PrimaryKey, id);
             return OnExecute(query).Select(CreateEntity).FirstOrDefault();
-            //List<TEntity> entities = OnExecute(query);
-            //if (entities != null && entities.Count > 0)
-            //    return entities[0];
-            //return null;
         }
         public int Insert(TEntity entity)
         {
@@ -56,18 +47,10 @@ namespace Mic.Repository
             string nameText = nameBuilder.ToString().TrimEnd(',');
             string valueText = valueBuilder.ToString().TrimEnd(',');
             return OnExecuteScalar(nameText,valueText,parameters);
-
-            //Type entityType = entity.GetType();
-            //PropertyInfo[] propInf = entityType.GetProperties();
-
-            //foreach (var property in propInf)
-            //{
-            //    object val = property.GetValue(entity);
-            //    var param = new SqlParameter($"@{property.Name}", val);
-            //    parameters.Add(param);
-            //    string query = string.Format(Queries.Insert, TableName, property.Name, val);
-            //    OnExecute(query);
-            //}
+        }
+        public int Delete(int id)
+        {
+            string query = string.Format(Queries.Delete,TableName,id);
         }
     }
 }
