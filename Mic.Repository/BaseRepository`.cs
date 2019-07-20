@@ -51,5 +51,17 @@ namespace Mic.Repository
                 string query = string.Format(Queries.Delete, TableName, id);
                 OnExecuteNonQuery(query);
         }
+        public IEnumerable<IDataReader> SelectOne(int id) //
+        {
+            string query = string.Format(Queries.SelectOne, TableName, id);
+            return OnExecute(query);
+        }
+
+        public int Update(TEntity entity, int id)
+        {
+            string query = string.Format(Queries.Update, TableName, name, surname, id);
+            OnExecuteScalar();
+            return 1;
+        }
     }
 }

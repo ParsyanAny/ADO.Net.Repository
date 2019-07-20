@@ -13,8 +13,9 @@ namespace Mic.Repository.MyTest
             string conStr = @"Data Source=ANY;Initial Catalog=StudentDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             var dbContext = new DbContext(conStr);
 
-            //IStudentRepository st = new StudentRepository(dbContext);
-            //var stu = new Student {Name = "A", Surname = "B", Gender_Id = 1, University_Id = 1 };
+            IStudentRepository st = new StudentRepository(dbContext);
+            var stu = new Student { Name = "A", Surname = "B", Gender_Id = 1, University_Id = 1 };
+            st.SelectAll();
             //st.Insert(stu); //+
             //st.Delete(78);   //+
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Mic.Repository
@@ -8,12 +9,13 @@ namespace Mic.Repository
         where TEntity : class, new()
     {
         IEnumerable<TEntity> SelectAll();
+        IEnumerable<IDataReader> SelectOne(int id);
         TEntity FirstOrDefault(int id);
         int Insert(TEntity entity);
         void Delete(int id);
+        int Update(TEntity entity, int id);
 
         //IEnumerable<TEntity> SelectAll(string query);
-       // int Update(TEntity entity);
        // int InsertOrUpdate(TEntity entity);
     }
 }
