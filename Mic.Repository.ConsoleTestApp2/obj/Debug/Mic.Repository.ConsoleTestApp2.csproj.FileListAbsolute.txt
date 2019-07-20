@@ -1,0 +1,7 @@
+C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp2\bin\Debug\Mic.Repository.ConsoleTestApp2.exe.config
+C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp2\bin\Debug\Mic.Repository.ConsoleTestApp2.exe
+C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp2\bin\Debug\Mic.Repository.ConsoleTestApp2.pdb
+C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp2\obj\Debug\Mic.Repository.ConsoleTestApp2.csprojAssemblyReference.cache
+C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp2\obj\Debug\Mic.Repository.ConsoleTestApp2.csproj.CoreCompileInputs.cache
+C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp2\obj\Debug\Mic.Repository.ConsoleTestApp2.exe
+C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp2\obj\Debug\Mic.Repository.ConsoleTestApp2.pdb
