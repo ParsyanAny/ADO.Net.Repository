@@ -14,7 +14,6 @@ namespace Mic.Repository
         protected BaseRepository(DbContext dbContext) : base(dbContext) { }
         protected abstract TEntity CreateEntity(IDataReader reader);
 
-
         public IEnumerable<TEntity> SelectAll()
         {
             string query = string.Format(Queries.SelectAll, TableName);
@@ -47,9 +46,10 @@ namespace Mic.Repository
             string valueText = valueBuilder.ToString().TrimEnd(',');
             return OnExecuteScalar(nameText,valueText,parameters);
         }
-        public int Delete(int id)
+        public void Delete(int id)
         {
-            string query = string.Format(Queries.Delete,TableName,id);
+                string query = string.Format(Queries.Delete, TableName, id);
+                OnExecuteNonQuery(query);
         }
     }
 }

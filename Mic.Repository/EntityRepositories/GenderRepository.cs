@@ -2,8 +2,8 @@
 using Mic.Repository.Entities;
 using System.Data;
 
-namespace Mic.Repository.EntityRepositories
-{
+namespace Mic.Repository
+{ 
     public class GenderRepository : BaseRepository<Gender>, IGenderRepository
     {
         public GenderRepository(DbContext dbContext) : base(dbContext) { }

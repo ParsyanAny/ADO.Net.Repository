@@ -9,7 +9,8 @@ namespace Mic.Repository.ConsoleTestApp1
     {
         static void Main(string[] args)
         {
-            string conStr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AnyDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string conStr = @"Data Source=ANY\MSSQLLocalDB;Initial Catalog=StudentDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            var dbContext = new DbContext(conStr);
 
             #region ReflectionTest
             //var uni1 = new University() { Id = 1, Name = "U1", DestroyDate = DateTime.Now};
@@ -26,7 +27,6 @@ namespace Mic.Repository.ConsoleTestApp1
             //}
             //    Console.ReadLine();
             #endregion
-            var dbContext = new DbContext(conStr);
 
             //var stRepository = new StudentRepository(dbContext);
             //List<Student> students = stRepository.SelectAll();

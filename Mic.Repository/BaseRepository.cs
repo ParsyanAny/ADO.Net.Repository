@@ -52,6 +52,15 @@ namespace Mic.Repository
 
             }
         }
+
+        protected void OnExecuteNonQuery(string query)
+        {
+            using (var cmd = _dbContext.CreateCommand())
+            {
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
     
     

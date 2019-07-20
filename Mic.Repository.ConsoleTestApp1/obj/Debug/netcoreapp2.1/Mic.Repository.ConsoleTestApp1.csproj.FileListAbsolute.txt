@@ -26,3 +26,17 @@ C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.Con
 C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.csproj.CopyComplete
 C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.dll
 C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.pdb
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\bin\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.deps.json
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\bin\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.runtimeconfig.json
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\bin\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.runtimeconfig.dev.json
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\bin\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.dll
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\bin\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.pdb
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\bin\Debug\netcoreapp2.1\Mic.Repository.dll
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\bin\Debug\netcoreapp2.1\Mic.Repository.pdb
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.csprojAssemblyReference.cache
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.csproj.CoreCompileInputs.cache
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.AssemblyInfoInputs.cache
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.AssemblyInfo.cs
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.csproj.CopyComplete
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.dll
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository.ConsoleTestApp1\obj\Debug\netcoreapp2.1\Mic.Repository.ConsoleTestApp1.pdb

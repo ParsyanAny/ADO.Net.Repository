@@ -2,7 +2,7 @@
 using Mic.Repository.Entities;
 using System.Data;
 
-namespace Mic.Repository.EntityRepositories
+namespace Mic.Repository
 {
     public class TeacherRepository : BaseRepository<Teacher>, ITeacherInterface
     {

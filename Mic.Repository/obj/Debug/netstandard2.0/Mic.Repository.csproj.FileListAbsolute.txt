@@ -16,3 +16,12 @@ C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository\obj
 C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.AssemblyInfo.cs
 C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.dll
 C:\Users\ar.tonoyan\Desktop\Repository_Pattern\Mic.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.pdb
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.csprojAssemblyReference.cache
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.AssemblyInfoInputs.cache
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.AssemblyInfo.cs
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.dll
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\obj\Debug\netstandard2.0\Mic.Repository.pdb
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\bin\Debug\netstandard2.0\Mic.Repository.deps.json
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\bin\Debug\netstandard2.0\Mic.Repository.dll
+C:\Users\Any\source\repos\ADO.Net.Repository\Mic.Repository\bin\Debug\netstandard2.0\Mic.Repository.pdb

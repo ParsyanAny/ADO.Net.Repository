@@ -10,9 +10,9 @@ namespace Mic.Repository
         IEnumerable<TEntity> SelectAll();
         TEntity FirstOrDefault(int id);
         int Insert(TEntity entity);
+        void Delete(int id);
 
         //IEnumerable<TEntity> SelectAll(string query);
-       // int Delete(int id);
        // int Update(TEntity entity);
        // int InsertOrUpdate(TEntity entity);
     }
