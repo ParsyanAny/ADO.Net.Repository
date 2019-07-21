@@ -16,7 +16,7 @@ namespace Mic.Repository
         int Insert(TEntity entity);
         void Delete(int id);
         int Update(TEntity entity, int id);
-
-       // int InsertOrUpdate(TEntity entity);
+        int Update(TEntity entity);
+        int InsertOrUpdate(TEntity entity);
     }
 }
