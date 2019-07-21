@@ -13,15 +13,30 @@ namespace Mic.Repository
     {
         protected BaseRepository(DbContext dbContext) : base(dbContext) { }
         protected abstract TEntity CreateEntity(IDataReader reader);
-
+        
         public IEnumerable<TEntity> SelectAll()
         {
             string query = string.Format(Queries.SelectAll, TableName);
             return OnExecute(query).Select(CreateEntity);
-        }
-        public TEntity FirstOrDefault(int id)
+        }  //SELECT * FROM {...}
+        public TEntity SelectOne(int id)
         {
-            string query = string.Format(Queries.SelectOne, TableName, PrimaryKey, id);
+            string query = string.Format(Queries.SelectWhereId, TableName, id);
+            return OnExecute(query).Select(CreateEntity).FirstOrDefault();
+        }  //SELECT * FROM {...} WHERE Id = {...}
+        public IEnumerable<TEntity> SelectWhere(string whereQuery)
+        {
+           string query = string.Format(Queries.SelectAllWhere, TableName, whereQuery);
+            return OnExecute(query).Select(CreateEntity);
+        } // SELECT * FROM {...} WHERE {...}
+        public TEntity SelectOne(string whereQuery)
+        {
+            string query = string.Format(Queries.SelectWhere, TableName, whereQuery);
+            return OnExecute(query).Select(CreateEntity).FirstOrDefault();
+        } //SELECT * FROM {...} WHERE {...}
+        public TEntity FirstOrDefault()
+        {
+            string query = string.Format(Queries.FirstOrDefault, TableName);
             return OnExecute(query).Select(CreateEntity).FirstOrDefault();
         }
         public int Insert(TEntity entity)
@@ -45,20 +60,15 @@ namespace Mic.Repository
             
            string nameText = nameBuilder.ToString().TrimEnd(',');
            string valueText = valueBuilder.ToString().TrimEnd(',');
-            
-            return OnExecuteScalar(nameText,valueText, parameters);
+           string query = string.Format(Queries.InsertScalar, TableName, nameText, valueText);
+
+            return OnExecuteScalar(query, parameters);
         }
         public void Delete(int id)
         {
                 string query = string.Format(Queries.Delete, TableName, id);
                 OnExecuteNonQuery(query);
-        }
-        public IEnumerable<IDataReader> SelectOne(int id) //
-        {
-            string query = string.Format(Queries.SelectOne, TableName, id);
-            return OnExecute(query);
-        }
-
+        }  //DELETE {...} WHERE Id = {...}
         public int Update(TEntity entity, int id)
         {
             var nameBuilder = new StringBuilder();
@@ -80,7 +90,9 @@ namespace Mic.Repository
                 }
             }
             string nameText = nameBuilder.ToString().TrimEnd(',');
-            return (int)OnExecuteScalar(id, nameText,parameters);
-        }
+            string query = string.Format(Queries.Update, TableName, nameText, id, TableName);
+
+            return (int)OnExecuteScalar(query,parameters);
+        } 
     }
 }

@@ -8,14 +8,15 @@ namespace Mic.Repository
     public interface IBaseRepository<TEntity>
         where TEntity : class, new()
     {
-        IEnumerable<TEntity> SelectAll();
-        IEnumerable<IDataReader> SelectOne(int id);
-        TEntity FirstOrDefault(int id);
+        IEnumerable<TEntity> SelectAll();   // SELECT * WHERE {...}
+        TEntity SelectOne(int id);  //  SELECT * FROM {...} WHERE Id = {...}
+        TEntity SelectOne(string query); // SELECT * FROM {...} WHERE {...}
+        IEnumerable<TEntity> SelectWhere(string query);  // SELECT * FROM {...} WHERE {...}
+        TEntity FirstOrDefault();
         int Insert(TEntity entity);
         void Delete(int id);
         int Update(TEntity entity, int id);
 
-        //IEnumerable<TEntity> SelectAll(string query);
        // int InsertOrUpdate(TEntity entity);
     }
 }
