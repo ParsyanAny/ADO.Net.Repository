@@ -18,12 +18,25 @@ namespace Mic.Repository
 
         public abstract string TableName { get; }
         protected virtual string PrimaryKey => DbNames.Col_Id;
-        //protected virtual string DestroyDate => DbNames.Col_DestroyDate;
+        protected virtual string DestroyDate => DbNames.Col_DestroyDate;
         protected int OnExecuteScalar(string name, string value, IEnumerable<SqlParameter> pars)
         {
             using (var cmd = _dbContext.CreateCommand())
             {
                 cmd.CommandText = string.Format(Queries.InsertScalar, TableName, name, value);
+                foreach (var item in pars)
+                {
+                    cmd.Parameters.Add(item);
+                }
+                return (int)cmd.ExecuteScalar();
+            }
+        }
+        protected int OnExecuteScalar( int id, string nameValue, IEnumerable<SqlParameter> pars)
+        {
+            using (var cmd = _dbContext.CreateCommand())
+            {
+                cmd.CommandText = string.Format(Queries.Update, TableName, nameValue, id, TableName);
+
                 foreach (var item in pars)
                 {
                     cmd.Parameters.Add(item);

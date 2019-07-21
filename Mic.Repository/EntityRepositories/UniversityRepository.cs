@@ -13,7 +13,7 @@ namespace Mic.Repository
         {
             throw new NotImplementedException();
         }
-        public int Update(int id, string name)
+        public int Update(int id, string name, DateTime Destroy_Date)
         {
             throw new NotImplementedException();
         }

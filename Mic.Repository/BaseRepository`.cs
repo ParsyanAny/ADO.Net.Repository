@@ -42,9 +42,11 @@ namespace Mic.Repository
                 sqlP.Value = value;
                 parameters.Add(sqlP);
             }
-            string nameText = nameBuilder.ToString().TrimEnd(',');
-            string valueText = valueBuilder.ToString().TrimEnd(',');
-            return OnExecuteScalar(nameText,valueText,parameters);
+            
+           string nameText = nameBuilder.ToString().TrimEnd(',');
+           string valueText = valueBuilder.ToString().TrimEnd(',');
+            
+            return OnExecuteScalar(nameText,valueText, parameters);
         }
         public void Delete(int id)
         {
@@ -59,9 +61,26 @@ namespace Mic.Repository
 
         public int Update(TEntity entity, int id)
         {
-            string query = string.Format(Queries.Update, TableName, name, surname, id);
-            OnExecuteScalar();
-            return 1;
+            var nameBuilder = new StringBuilder();
+            var valueBuilder = new StringBuilder();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            foreach (var prop in entity.GetType().GetProperties().Where(p => p.Name != PrimaryKey && p.GetValue(entity) != null))
+            {
+                if (prop != null)
+                {
+                    nameBuilder.Append(prop.Name).Append("=").Append("@").Append(prop.Name).Append(",");
+
+                    var sqlP = new SqlParameter(prop.Name, prop.PropertyType);
+                    object value = prop.GetValue(entity);
+                    if (value == null)
+                        value = DBNull.Value;
+                    sqlP.Value = value;
+                    parameters.Add(sqlP);
+                }
+            }
+            string nameText = nameBuilder.ToString().TrimEnd(',');
+            return (int)OnExecuteScalar(id, nameText,parameters);
         }
     }
 }
