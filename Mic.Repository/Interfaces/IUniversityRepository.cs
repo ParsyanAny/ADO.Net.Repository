@@ -7,7 +7,7 @@ namespace Mic.Repository
 {
     public interface IUniversityRepository : IBaseRepository<University>
     {
-        int Update(int id, string name, DateTime Destroy_Date);
+        int Update(int id, string name, DateTime DestroyDate);
         int Destroy(int id);
 
     }

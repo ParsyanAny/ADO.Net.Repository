@@ -25,10 +25,10 @@ namespace Mic.Repository.MyTest
             //tea.Delete(8); //-
             //tea.Insert(t); // -
 
-            IUniversityRepository uni = new UniversityRepository(dbContext);
-            var un = new University { Name = "TestUniNow", DestroyDate = DateTime.Now };
-            uni.Update(un,1);  //-
-            //uni.Insert(un);  //-
+            //IUniversityRepository uni = new UniversityRepository(dbContext);
+            //var un = new University {Name = "MOMO"};
+            ////uni.Update(un,3);  //+
+            //uni.Insert(un);  //+
             //uni.Delete(46); //+
 
         }
