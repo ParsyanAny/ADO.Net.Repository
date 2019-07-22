@@ -36,18 +36,15 @@ namespace Mic.Repository
             using (var cmd = _dbContext.CreateCommand())
             {
                 cmd.CommandText = query;
-                var reader = cmd.ExecuteReader();
-                if (reader.FieldCount > 0)
+                using (var reader = cmd.ExecuteReader())
                 {
-                    while (reader.Read())
+                    if (reader.FieldCount > 0)
                     {
-                        yield return reader;
+                        while (reader.Read())
+                        {
+                            yield return reader;
+                        }
                     }
-                }
-                if (reader != null)
-                {
-                    if (!reader.IsClosed)
-                        reader.Close();
                 }
             }
         }

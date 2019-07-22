@@ -13,27 +13,30 @@ namespace Mic.Repository
     {
         protected BaseRepository(DbContext dbContext) : base(dbContext) { }
         protected abstract TEntity CreateEntity(IDataReader reader);
-
+        //SELECT * FROM {...}
         public IEnumerable<TEntity> SelectAll()
         {
             string query = string.Format(Queries.SelectAll, TableName);
             return OnExecute(query).Select(CreateEntity);
-        }  //SELECT * FROM {...}
+        }
+        //SELECT * FROM {...} WHERE Id = {...}
         public TEntity SelectOne(int id)
         {
             string query = string.Format(Queries.SelectWhereId, TableName, id);
             return OnExecute(query).Select(CreateEntity).FirstOrDefault();
-        }  //SELECT * FROM {...} WHERE Id = {...}
+        }
+        // SELECT * FROM {...} WHERE {...}
         public IEnumerable<TEntity> SelectWhere(string whereQuery)
         {
             string query = string.Format(Queries.SelectAllWhere, TableName, whereQuery);
             return OnExecute(query).Select(CreateEntity);
-        } // SELECT * FROM {...} WHERE {...}
+        }
+        //SELECT * FROM {...} WHERE {...}
         public TEntity SelectOne(string whereQuery)
         {
             string query = string.Format(Queries.SelectWhere, TableName, whereQuery);
             return OnExecute(query).Select(CreateEntity).FirstOrDefault();
-        } //SELECT * FROM {...} WHERE {...}
+        } 
         public TEntity FirstOrDefault()
         {
             string query = string.Format(Queries.FirstOrDefault, TableName);
@@ -64,6 +67,7 @@ namespace Mic.Repository
 
             return OnExecuteScalar(query, parameters);
         }
+        // Update with Id
         public int Update(TEntity entity, int id)
         {
             var nameBuilder = new StringBuilder();
@@ -88,7 +92,8 @@ namespace Mic.Repository
             string query = string.Format(Queries.Update, TableName, nameText, id, TableName);
 
             return (int)OnExecuteScalar(query, parameters);
-        }  // Update with Id
+        }
+        // Update without Id
         public int Update(TEntity entity)
         {
             Type t = entity.GetType();
@@ -116,7 +121,7 @@ namespace Mic.Repository
             string query = string.Format(Queries.Update, TableName, nameText, id, TableName);
 
             return (int)OnExecuteScalar(query, parameters);
-        }  // Update without Id
+        }  
         public int InsertOrUpdate(TEntity entity)
         {
             Type t = entity.GetType();
@@ -125,10 +130,11 @@ namespace Mic.Repository
                 return Insert(entity);
             return Update(entity);
         }
+        //DELETE {...} WHERE Id = {...}
         public void Delete(int id)
         {
             string query = string.Format(Queries.Delete, TableName, id);
             OnExecuteNonQuery(query);
-        }  //DELETE {...} WHERE Id = {...}
+        }  
     }
 }
